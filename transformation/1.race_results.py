@@ -3,10 +3,6 @@
 
 # COMMAND ----------
 
-
-
-# COMMAND ----------
-
 from pyspark.sql.functions import col, current_timestamp
 
 # COMMAND ----------
@@ -55,7 +51,7 @@ race_results_df = results_df.join(race_circuits_df, results_df.race_id == race_c
 
 # COMMAND ----------
 
-final_df = race_results_df.select('race_year', 'race_name', 'race_date', 'circuit_location', 'driver_name', 'driver_number', 'driver_nationality','team','grid','points','race_time','fastest_lap') \
+final_df = race_results_df.select('race_year', 'race_name', 'race_date', 'circuit_location', 'driver_name', 'driver_number', 'driver_nationality','team','grid','points','race_time','fastest_lap', 'position') \
 .withColumn('created_date', current_timestamp())
 
 # COMMAND ----------
