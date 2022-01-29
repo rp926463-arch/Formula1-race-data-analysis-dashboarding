@@ -75,7 +75,7 @@ results_final_df = add_ingestion_date(results_temp_df)
 
 # COMMAND ----------
 
-results_final_df.write.mode('overwrite').partitionBy('race_id').parquet('/mnt/formula1dl199/processed/results')
+results_final_df.write.mode('overwrite').partitionBy('race_id').format('parquet').saveAsTable('f1_processed.results')
 
 # COMMAND ----------
 
