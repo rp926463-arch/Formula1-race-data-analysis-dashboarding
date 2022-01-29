@@ -73,7 +73,7 @@ race_selected_df = race_new_df.select(col('raceId').alias('race_id'), col('year'
 
 # COMMAND ----------
 
-race_selected_df.write.mode('overwrite').partitionBy('race_year').parquet(f'{processed_folder_path}/races')
+race_selected_df.write.mode('overwrite').format('parquet').saveAsTable('f1_processed.races')
 
 # COMMAND ----------
 

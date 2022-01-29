@@ -56,7 +56,7 @@ laptimes_final_df = add_ingestion_date(laptimes_temp_df)
 
 # COMMAND ----------
 
-laptimes_final_df.write.mode('overwrite').parquet(f'{processed_folder_path}/lap_times')
+laptimes_final_df.write.mode('overwrite').format('parquet').saveAsTable('f1_processed.lap_times')
 
 # COMMAND ----------
 
